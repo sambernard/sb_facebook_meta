@@ -1,0 +1,3 @@
+[submodule "libraries/concrete5-package-installer"]
+	path = libraries/concrete5-package-installer
+	url = git@github.com:jollyscience/concrete5-package-installer.git
