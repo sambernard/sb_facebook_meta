@@ -2,8 +2,6 @@
 /**
  * Installs the SBFacebookMeta Package and hooks events
  *
- *
- *
  * PHP version 5
  *
  * LICENSE: This source file is subject to version 3.01 of the PHP license
@@ -25,13 +23,55 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 Loader::library('concrete5-package-installer/jollyscience_package', 'sb_facebook_meta');
 
+
+
+/**
+ * SbFacebookMetaPackage class.
+ * 
+ * @extends JollysciencePackage
+ */
 class SbFacebookMetaPackage extends JollysciencePackage {
 
+
+  /**
+   * pkgHandle
+   * 
+   * @var string
+   * @access protected
+   */
   protected $pkgHandle = 'sb_facebook_meta';
+
+  /**
+   * pkgDescription
+   * 
+   * @var string
+   * @access protected
+   */
   protected $pkgDescription = 'Allows setting of Facebook Meta on a per-page basis. Pages that don\'t have fields set will inherit from the Home page.';
+
+  /**
+   * appVersionRequired
+   * 
+   * @var string
+   * @access protected
+   */
   protected $appVersionRequired = '5.6.0';
+  
+  /**
+   * pkgVersion
+   * 
+   * @var string
+   * @access protected
+   */
   protected $pkgVersion = '0.0.1';    
 
+
+  /**
+   * commonAttributes
+   * 
+   * @var mixed
+   * @access public
+   */
   public $commonAttributes = array(
     'og_title' => array(
       'name' => 'Facebook Title',
@@ -99,6 +139,17 @@ class SbFacebookMetaPackage extends JollysciencePackage {
     )
   );  
   
+  
+  
+  /**
+   * events
+   * 
+   * The meta tags are added in the
+   * `on_before_render` event
+   *
+   * @var mixed
+   * @access public
+   */
   public $events = array(
     'on_before_render' => array(
       array(
@@ -108,9 +159,4 @@ class SbFacebookMetaPackage extends JollysciencePackage {
       )
     )
   );
-  
-  
-  public function on_start(){
-    parent::on_start();
-  }
 }
