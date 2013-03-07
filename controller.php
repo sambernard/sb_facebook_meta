@@ -40,12 +40,20 @@ class SbFacebookMetaPackage extends JollysciencePackage {
   protected $pkgHandle = 'sb_facebook_meta';
 
   /**
+   * pkgName
+   *
+   * @var string
+   * @access protected
+   */
+  protected $pkgName = 'Facebook OpenGraph Tags';
+
+  /**
    * pkgDescription
    *
    * @var string
    * @access protected
    */
-  protected $pkgDescription = 'Allows setting of Facebook Meta on a per-page basis. Pages that don\'t have fields set will inherit from the Home page.';
+  protected $pkgDescription = 'Adds attributes for setting Facebook Open Graph tags. If an attributes isn\'t set, the package will try and create the Open Graph tag using other information, or by inheriting it from the Home Page.';
 
   /**
    * appVersionRequired
@@ -61,7 +69,7 @@ class SbFacebookMetaPackage extends JollysciencePackage {
    * @var string
    * @access protected
    */
-  protected $pkgVersion = '1.0';
+  protected $pkgVersion = '0.9';
 
 
   /**
