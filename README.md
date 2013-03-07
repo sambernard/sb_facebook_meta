@@ -5,8 +5,9 @@ This package implements Facebook OpenGraph meta tags in Concrete5.
 
 ## Instructions
 
-This plugin adds the following attributes, available when editing
-a Page's properties.
+The og:url, og:title, and og:description tags are generated automatically once the package is installed, although they can be customized by editing the Custom Attributes for a page.
+
+The following Facebook Open Graph meta tags are supported. These are available when editing a Page's custom attributes:
 
 * Facebook Title `og:title` - If left blank, will use the page name
 * Facebook Type `og:type - If left blank, will inherit from the home page
@@ -20,3 +21,7 @@ on a new line. The tag name and value are separated by a pipe (`|`). Example:
   fb:app_id|12345678
   fb:admins|34235,12415
   og:video|http://example.com/movie.flv
+
+To check that the meta tags are being generated correctly, test your URL using the [Facebook Debugger](https://developers.facebook.com/tools/debug)
+
+The latest code and documentation can always be found [on Github](https://github.com/shihab-alain/sb_facebook_meta).
