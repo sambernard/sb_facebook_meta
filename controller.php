@@ -23,11 +23,9 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 Loader::library('concrete5-package-installer/jollyscience_package', 'sb_facebook_meta');
 
-
-
 /**
  * SbFacebookMetaPackage class.
- * 
+ *
  * @extends JollysciencePackage
  */
 class SbFacebookMetaPackage extends JollysciencePackage {
@@ -35,7 +33,7 @@ class SbFacebookMetaPackage extends JollysciencePackage {
 
   /**
    * pkgHandle
-   * 
+   *
    * @var string
    * @access protected
    */
@@ -43,7 +41,7 @@ class SbFacebookMetaPackage extends JollysciencePackage {
 
   /**
    * pkgDescription
-   * 
+   *
    * @var string
    * @access protected
    */
@@ -51,24 +49,24 @@ class SbFacebookMetaPackage extends JollysciencePackage {
 
   /**
    * appVersionRequired
-   * 
+   *
    * @var string
    * @access protected
    */
   protected $appVersionRequired = '5.6.0';
-  
+
   /**
    * pkgVersion
-   * 
+   *
    * @var string
    * @access protected
    */
-  protected $pkgVersion = '0.0.1';    
+  protected $pkgVersion = '0.0.1';
 
 
   /**
    * commonAttributes
-   * 
+   *
    * @var mixed
    * @access public
    */
@@ -124,7 +122,7 @@ class SbFacebookMetaPackage extends JollysciencePackage {
     'og_description' => array(
       'name' => 'Facebook Description',
       'type' => 'textarea'
-    ),    
+    ),
     'og_image' => array(
       'name' => 'Facebook Share Image',
       'type' => 'image_file'
@@ -137,13 +135,13 @@ class SbFacebookMetaPackage extends JollysciencePackage {
       'name' => 'Additional newline separated OG Tags, in the format of og:tagname|value',
       'type' => 'textarea'
     )
-  );  
-  
-  
-  
+  );
+
+
+
   /**
    * events
-   * 
+   *
    * The meta tags are added in the
    * `on_before_render` event
    *
