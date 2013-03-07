@@ -23,7 +23,7 @@
 
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
-Loader::library('jollyscience_package', 'sb_facebook_meta');
+Loader::library('concrete5-package-installer/jollyscience_package', 'sb_facebook_meta');
 
 class SbFacebookMetaPackage extends JollysciencePackage {
 
