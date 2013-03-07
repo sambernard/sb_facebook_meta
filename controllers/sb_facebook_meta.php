@@ -65,7 +65,7 @@ class SbFacebookMetaController extends Controller {
     $c = Page::getCurrentPage();
 
     foreach (self::$og_tags as $tag) {
-      $tagValue = $c->getAttribute(str_replace(':', '_', $tag));
+      $tagValue = trim($c->getAttribute(str_replace(':', '_', $tag)));
 
       if (!empty($tagValue)) {
         $tagsToPrint[$tag]= $tagValue;
@@ -75,7 +75,7 @@ class SbFacebookMetaController extends Controller {
           $tagsToPrint[$tag]= $c->getCollectionName();
           break;
         case 'og:description':
-          $description = $c->getAttribute('meta_description');
+          $description = trim($c->getAttribute('meta_description'));
 
           if (!empty($description)) {
             $tagsToPrint[$tag]= $description;
