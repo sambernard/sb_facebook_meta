@@ -53,7 +53,7 @@ class SbFacebookMetaPackage extends JollysciencePackage {
    * @var string
    * @access protected
    */
-  protected $pkgVersion = '0.9';
+  protected $pkgVersion = '0.9.1';
 
 
   /**
