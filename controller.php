@@ -40,22 +40,6 @@ class SbFacebookMetaPackage extends JollysciencePackage {
   protected $pkgHandle = 'sb_facebook_meta';
 
   /**
-   * pkgName
-   *
-   * @var string
-   * @access protected
-   */
-  protected $pkgName = 'Facebook OpenGraph Tags';
-
-  /**
-   * pkgDescription
-   *
-   * @var string
-   * @access protected
-   */
-  protected $pkgDescription = 'Adds attributes for setting Facebook Open Graph tags. If an attributes isn\'t set, the package will try and create the Open Graph tag using other information, or by inheriting it from the Home Page.';
-
-  /**
    * appVersionRequired
    *
    * @var string
@@ -73,79 +57,96 @@ class SbFacebookMetaPackage extends JollysciencePackage {
 
 
   /**
-   * commonAttributes
-   *
-   * @var mixed
+   * getPackageName function.
+   * 
    * @access public
+   * @return void
    */
-  public $commonAttributes = array(
-    'og_title' => array(
-      'name' => 'Facebook Title',
-      'type' => 'text'
-    ),
-    'og_type' => array(
-      'name' => 'Facebook Type',
-      'type' => 'select',
-      'selectOptions' => array(
-        'article',
-        'blog',
-        'website',
-        'activity',
-        'sport',
-        'bar',
-        'company',
-        'cafe',
-        'hotel',
-        'restaurant',
-        'cause',
-        'sports_league',
-        'sports_team',
-        'band',
-        'government',
-        'non_profit',
-        'school',
-        'university',
-        'actor',
-        'athlete',
-        'author',
-        'director',
-        'musician',
-        'politician',
-        'public_figure',
-        'city',
-        'country',
-        'landmark',
-        'state_province',
-        'album',
-        'book',
-        'drink',
-        'food',
-        'game',
-        'product',
-        'song',
-        'movie',
-        'tv_show'
-      )
-    ),
-    'og_description' => array(
-      'name' => 'Facebook Description',
-      'type' => 'textarea'
-    ),
-    'og_image' => array(
-      'name' => 'Facebook Share Image',
-      'type' => 'image_file'
-    ),
-    'og_url' => array(
-      'name' => 'Facebook Canonical URL (should not be needed)',
-      'type' => 'text'
-    ),
-    'og_additional_tags' => array(
-      'name' => 'Additional newline separated OG Tags, in the format of og:tagname|value',
-      'type' => 'textarea'
-    )
-  );
+  public function getPackageName() {
+    return t("Facebook OpenGraph Tags");
+  }
+  
+  
+  /**
+   * getPackageDescription function.
+   * 
+   * @access public
+   * @return void
+   */
+  public function getPackageDescription() {
+    return t("Adds attributes for setting Facebook Open Graph tags. If an attributes isn\'t set, the package will try and create the Open Graph tag using other information, or by inheriting it from the Home Page.");
+  }
 
-
+  public function __construct(){
+    parent::__construct();
+        
+    $this->commonAttributes = array(
+        'og_title' => array(
+          'name' => t('Facebook Title'),
+          'type' => 'text'
+        ),
+        'og_type' => array(
+          'name' => t('Facebook Type'),
+          'type' => 'select',
+          'selectOptions' => array(
+            'article',
+            'blog',
+            'website',
+            'activity',
+            'sport',
+            'bar',
+            'company',
+            'cafe',
+            'hotel',
+            'restaurant',
+            'cause',
+            'sports_league',
+            'sports_team',
+            'band',
+            'government',
+            'non_profit',
+            'school',
+            'university',
+            'actor',
+            'athlete',
+            'author',
+            'director',
+            'musician',
+            'politician',
+            'public_figure',
+            'city',
+            'country',
+            'landmark',
+            'state_province',
+            'album',
+            'book',
+            'drink',
+            'food',
+            'game',
+            'product',
+            'song',
+            'movie',
+            'tv_show'
+          )
+        ),
+        'og_description' => array(
+          'name' => t('Facebook Description'),
+          'type' => 'textarea'
+        ),
+        'og_image' => array(
+          'name' => t('Facebook Share Image'),
+          'type' => 'image_file'
+        ),
+        'og_url' => array(
+          'name' => t('Facebook Canonical URL (should not be needed)'),
+          'type' => 'text'
+        ),
+        'og_additional_tags' => array(
+          'name' => t('Additional newline separated OG Tags, in the format of og:tagname|value'),
+          'type' => 'textarea'
+        )
+      );
+  }
 
   /**
    * events
