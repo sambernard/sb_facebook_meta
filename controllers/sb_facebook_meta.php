@@ -123,7 +123,7 @@ class SbFacebookMetaController extends Controller {
 
     if (!empty($tagsToPrint)) {
       foreach ($tagsToPrint as $key => $value) {
-        $v->addHeaderItem(sprintf('<meta property="%s" content="%s"/>', $key, t(str_replace('"', '\"', $value))));
+        $v->addHeaderItem(sprintf('<meta property="%s" content="%s"/>', $key, t(str_replace('"', '\"', htmlentities($value))));
       }
     }
   }
